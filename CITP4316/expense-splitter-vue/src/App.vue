@@ -1,7 +1,10 @@
  <script setup>
+ import{ref, computed} from 'vue'
 import Header from './components/Header.vue';
 import Card from './components/Card.vue';
 import Section from './components/Section.vue';
+
+const people = ref(['John', 'Carlos'])
 </script>
 
 <template>
@@ -21,17 +24,20 @@ import Section from './components/Section.vue';
         </form>
 
         <Section title="People">
-          <ul id="peopleList" class="list"></ul>
+          <ul id="peopleList" class="list">
+            <li v-for="person in people" :key="person">
+              {{ person }}
+            </li>
+
+          </ul>
         </Section>
 
         <Section title="Expenses">
-            <h3>Expenses</h3>
             <ul id="expenseList" class="list"></ul>
         </Section>
 
         <Section title="Total">
-            <h3>Total</h3>
-            <p>
+             <p>
                 Total Spent: <strong id="totalSpent">$0.00</strong><br/>
                 Split Per Person: <strong id="splitAmount">$0.00</strong>
             </p>
@@ -64,5 +70,24 @@ button {
     background: #4f46e5;
     color: #fff;
     cursor: pointer;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.list li {
+    padding: 10px;
+    border-radius: 10px;
+    background: #f1f5ff;
+}
+
+.summaryList li {
+    background: #dcfce7;
+    color: #166534;
 }
 </style>
