@@ -1,15 +1,15 @@
  <script setup>
 import Header from './components/Header.vue';
+import Card from './components/Card.vue';
 </script>
 
 <template>
   <Header/>
-      
-
-    <main class="card">
-        <form id="personForm" class="rowForm">
-            <input id="personInput" type="text" placeholder="Add person name"/>
-            <button>Add Person</button>
+  <Card>
+    
+    <form id="personForm" class="rowForm">
+      <input id="personInput" type="text" placeholder="Add person name"/>
+      <button>Add Person</button>
         </form>
 
         <form id="expenseForm" class="rowForm">
@@ -41,7 +41,7 @@ import Header from './components/Header.vue';
             <h3>Summary</h3>
             <ul id="summaryList" class="list"></ul>
         </section>
-    </main>
+      </Card>
 </template>
 
 <style scoped>
