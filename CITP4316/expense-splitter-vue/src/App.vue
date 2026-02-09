@@ -1,6 +1,7 @@
  <script setup>
 import Header from './components/Header.vue';
 import Card from './components/Card.vue';
+import Section from './components/Section.vue';
 </script>
 
 <template>
@@ -19,31 +20,49 @@ import Card from './components/Card.vue';
             <button>Add Expense</button>
         </form>
 
-        <section>
-            <h3>People</h3>
-            <ul id="peopleList" class="list"></ul>
-        </section>
+        <Section title="People">
+          <ul id="peopleList" class="list"></ul>
+        </Section>
 
-        <section>
+        <Section title="Expenses">
             <h3>Expenses</h3>
             <ul id="expenseList" class="list"></ul>
-        </section>
+        </Section>
 
-        <section>
+        <Section title="Total">
             <h3>Total</h3>
             <p>
                 Total Spent: <strong id="totalSpent">$0.00</strong><br/>
                 Split Per Person: <strong id="splitAmount">$0.00</strong>
             </p>
-        </section>
+        </Section>
 
-        <section class="summary">
-            <h3>Summary</h3>
-            <ul id="summaryList" class="list"></ul>
-        </section>
+        <Section title="Summary">
+          <ul id="summaryList" class="list"></ul>
+        </Section>
       </Card>
 </template>
 
 <style scoped>
+.rowForm {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
 
+input, select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #c7d2fe;
+}
+
+button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    background: #4f46e5;
+    color: #fff;
+    cursor: pointer;
+}
 </style>
